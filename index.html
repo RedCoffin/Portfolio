@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akash Singh Manhas — Cloud &amp; Systems</title>
+<meta name="description" content="Portfolio of Akash Singh Manhas — IT support engineer training in cloud computing, networking and Linux systems administration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-deep:#0b1220;
+    --bg-panel:#111b2e;
+    --bg-panel-alt:#16223a;
+    --line:#22304a;
+    --line-soft:#1a2740;
+    --text:#e4eaf5;
+    --text-dim:#93a2c2;
+    --text-mute:#5f7095;
+    --rhel:#c7402f;
+    --aws:#e8923a;
+    --up:#4fd694;
+    --mono:'JetBrains Mono', monospace;
+    --sans:'Inter', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg-deep);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.6;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size:48px 48px;
+    background-position:-1px -1px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+  a{color:inherit;}
+  ::selection{background:var(--rhel); color:#fff;}
+
+  .wrap{max-width:980px; margin:0 auto; padding:0 24px;}
+
+  /* NAV */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,18,32,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:980px; margin:0 auto; padding:0 24px;
+    display:flex; align-items:center; justify-content:space-between;
+    height:60px;
+  }
+  .brand{
+    font-family:var(--mono); font-weight:700; font-size:14px;
+    letter-spacing:0.02em; color:var(--text);
+    display:flex; align-items:center; gap:8px;
+  }
+  .brand .dot{width:8px; height:8px; border-radius:50%; background:var(--up); box-shadow:0 0 8px var(--up); animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:0.4;}}
+  nav.links{display:flex; gap:2px; font-family:var(--mono); font-size:12px;}
+  nav.links a{
+    padding:8px 12px; color:var(--text-dim); text-decoration:none;
+    position:relative; letter-spacing:0.03em;
+  }
+  nav.links a::before{content:'/';color:var(--text-mute); margin-right:2px;}
+  nav.links a::after{
+    content:''; position:absolute; left:12px; right:12px; bottom:4px; height:1px;
+    background:var(--aws); transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+  }
+  nav.links a:hover{color:var(--text);}
+  nav.links a:hover::after{transform:scaleX(1);}
+  @media (max-width:640px){ nav.links{display:none;} }
+
+  /* HERO */
+  .hero{padding:96px 0 64px;}
+  .term{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 20px 60px -20px rgba(0,0,0,0.6);
+  }
+  .term-bar{
+    display:flex; align-items:center; gap:8px;
+    padding:10px 14px; background:var(--bg-panel-alt); border-bottom:1px solid var(--line);
+  }
+  .term-bar span{width:10px; height:10px; border-radius:50%; background:#33415f;}
+  .term-bar .path{margin-left:10px; font-family:var(--mono); font-size:11px; color:var(--text-mute);}
+  .term-body{padding:28px 26px 30px; font-family:var(--mono); font-size:14px;}
+  .term-body .line{color:var(--text-dim); margin-bottom:6px;}
+  .term-body .line .prompt{color:var(--up);}
+  .term-body .line .cmd{color:var(--text);}
+  #typed{color:var(--text);}
+  .cursor{display:inline-block; width:8px; height:16px; background:var(--aws); vertical-align:middle; margin-left:2px; animation:blink 1s steps(1) infinite;}
+  @keyframes blink{50%{opacity:0;}}
+
+  .hero-out{margin-top:18px; opacity:0; animation:fadeUp .6s ease forwards; animation-delay:1.8s;}
+  @keyframes fadeUp{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);}}
+
+  .hero-grid{display:grid; grid-template-columns:auto 1fr; gap:26px; align-items:start; padding-top:8px;}
+  .avatar-frame{
+    width:110px; height:110px; border-radius:10px; overflow:hidden;
+    border:1px solid var(--line); box-shadow:0 0 0 4px var(--bg-deep), 0 0 0 5px var(--line);
+  }
+  .avatar-frame img{width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(15%) contrast(1.05);}
+  h1{
+    font-family:var(--mono); font-weight:800; font-size:clamp(28px,4vw,40px);
+    letter-spacing:-0.01em; line-height:1.15; margin-bottom:6px;
+  }
+  .role{font-family:var(--mono); color:var(--aws); font-size:14px; font-weight:600; margin-bottom:14px;}
+  .lede{color:var(--text-dim); max-width:56ch; font-size:15.5px;}
+  .status-badge{
+    display:inline-flex; align-items:center; gap:8px; margin-top:16px;
+    font-family:var(--mono); font-size:11.5px; color:var(--up);
+    border:1px solid #1e4536; background:rgba(79,214,148,0.08);
+    padding:6px 12px; border-radius:100px;
+  }
+  .status-badge .d{width:6px; height:6px; border-radius:50%; background:var(--up); animation:pulse 2s infinite;}
+
+  .contact-row{display:flex; flex-wrap:wrap; gap:14px; margin-top:22px; font-family:var(--mono); font-size:12.5px;}
+  .contact-row a, .contact-row span{
+    color:var(--text-dim); text-decoration:none; border:1px solid var(--line);
+    padding:7px 11px; border-radius:6px; transition:border-color .2s, color .2s;
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .contact-row a:hover{color:var(--text); border-color:var(--aws);}
+
+  /* SECTION SHELL */
+  section{padding:64px 0;}
+  .sec-head{display:flex; align-items:baseline; gap:14px; margin-bottom:32px;}
+  .sec-tag{font-family:var(--mono); font-size:11px; color:var(--text-mute); letter-spacing:0.08em;}
+  .sec-title{font-family:var(--mono); font-weight:700; font-size:22px; color:var(--text);}
+  .sec-rule{flex:1; height:1px; background:var(--line);}
+
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ROUTING TABLE (experience) */
+  .route{
+    border:1px solid var(--line); background:var(--bg-panel);
+    border-radius:8px; margin-bottom:16px; overflow:hidden;
+  }
+  .route-head{
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+    gap:8px; padding:16px 20px; background:var(--bg-panel-alt); border-bottom:1px solid var(--line);
+  }
+  .route-host{font-family:var(--mono); font-weight:700; font-size:15px;}
+  .route-meta{font-family:var(--mono); font-size:11.5px; color:var(--text-mute); display:flex; gap:14px; flex-wrap:wrap;}
+  .route-status{display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px;}
+  .route-status.up{color:var(--up);}
+  .route-status.arch{color:var(--text-mute);}
+  .route-status .d{width:6px; height:6px; border-radius:50%; background:currentColor;}
+  .route-status.up .d{animation:pulse 2s infinite;}
+  .route-body{padding:18px 20px;}
+  .route-body ul{list-style:none;}
+  .route-body li{
+    position:relative; padding-left:20px; margin-bottom:9px; color:var(--text-dim); font-size:14.5px;
+  }
+  .route-body li:last-child{margin-bottom:0;}
+  .route-body li::before{content:'→'; position:absolute; left:0; color:var(--aws); font-family:var(--mono);}
+
+  /* SKILLS */
+  .skill-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px;}
+  .skill-card{border:1px solid var(--line); background:var(--bg-panel); border-radius:8px; padding:18px 20px;}
+  .skill-card h3{
+    font-family:var(--mono); font-size:12px; color:var(--aws); letter-spacing:0.06em;
+    margin-bottom:12px; text-transform:uppercase;
+  }
+  .skill-card ul{list-style:none;}
+  .skill-card li{
+    font-family:var(--mono); font-size:13px; color:var(--text-dim);
+    padding:6px 0; border-top:1px dashed var(--line-soft);
+  }
+  .skill-card li:first-child{border-top:none;}
+
+  /* PROJECTS */
+  .proj-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px;}
+  .proj-card{
+    border:1px solid var(--line); background:var(--bg-panel); border-radius:8px;
+    padding:20px; position:relative; transition:border-color .2s, transform .2s;
+  }
+  .proj-card:hover{border-color:var(--rhel); transform:translateY(-3px);}
+  .proj-num{font-family:var(--mono); font-size:11px; color:var(--text-mute); margin-bottom:10px;}
+  .proj-card h3{font-family:var(--mono); font-size:15px; margin-bottom:10px; color:var(--text);}
+  .proj-card p{font-size:13.5px; color:var(--text-dim);}
+
+  /* EDUCATION */
+  .edu-list{border-left:1px solid var(--line); margin-left:6px;}
+  .edu-item{position:relative; padding:0 0 26px 26px;}
+  .edu-item:last-child{padding-bottom:0;}
+  .edu-item::before{
+    content:''; position:absolute; left:-5.5px; top:4px; width:10px; height:10px;
+    border-radius:50%; background:var(--bg-deep); border:2px solid var(--aws);
+  }
+  .edu-item h3{font-family:var(--mono); font-size:14.5px; margin-bottom:4px;}
+  .edu-item .meta{font-family:var(--mono); font-size:11.5px; color:var(--text-mute); margin-bottom:6px;}
+  .edu-item p{font-size:13.5px; color:var(--text-dim);}
+
+  /* CERTS */
+  .cert-row{display:flex; flex-wrap:wrap; gap:10px;}
+  .cert-chip{
+    font-family:var(--mono); font-size:12px; color:var(--text-dim);
+    border:1px solid var(--line); padding:8px 14px; border-radius:6px; background:var(--bg-panel);
+  }
+  .cert-chip b{color:var(--text);}
+
+  /* CONTACT / FOOTER */
+  footer{border-top:1px solid var(--line); padding:56px 0 40px;}
+  .cta{
+    font-family:var(--mono); font-size:13px; color:var(--text-dim);
+    background:var(--bg-panel); border:1px solid var(--line); border-radius:8px;
+    padding:22px 24px;
+  }
+  .cta .p1{color:var(--up);}
+  .cta a{color:var(--aws); text-decoration:none; border-bottom:1px dashed var(--aws);}
+  .foot-meta{
+    margin-top:22px; font-family:var(--mono); font-size:11px; color:var(--text-mute);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand"><span class="dot"></span> akash@systems:~$</div>
+    <nav class="links">
+      <a href="#experience">experience</a>
+      <a href="#skills">skills</a>
+      <a href="#projects">labs</a>
+      <a href="#education">education</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="term">
+      <div class="term-bar">
+        <span></span><span></span><span></span>
+        <span class="path">akash@systems &mdash; whoami</span>
+      </div>
+      <div class="term-body">
+        <div class="line"><span class="prompt">$</span> <span class="cmd">whoami</span></div>
+        <div id="typed"></div><span class="cursor" id="cursor"></span>
+      </div>
+    </div>
+
+    <div class="hero-out">
+      <div class="hero-grid">
+        <div class="avatar-frame"><img src="assets/headshot.jpg" alt="Akash Singh Manhas"></div>
+        <div>
+          <h1>Akash Singh Manhas</h1>
+          <div class="role">IT Support &amp; Systems Engineer — training toward Cloud / DevOps</div>
+          <p class="lede">I keep desktops, networks and Windows systems running for real users, and I'm building the AWS, Azure and RHEL skills to move that same reliability into the cloud.</p>
+          <div class="status-badge"><span class="d"></span> status: open to cloud &amp; systems roles</div>
+          <div class="contact-row">
+            <a href="tel:+919797150027">+91 97971 50027</a>
+            <a href="mailto:akashmanhas3785@gmail.com">akashmanhas3785@gmail.com</a>
+            <a href="https://github.com/RedCoffin" target="_blank" rel="noopener">github.com/RedCoffin</a>
+            <span>Jammu, India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head"><span class="sec-tag">01 — ROUTES</span><h2 class="sec-title">Experience</h2><div class="sec-rule"></div></div>
+
+    <div class="route reveal">
+      <div class="route-head">
+        <div class="route-host">Bajaj General Insurance <span style="color:var(--text-mute); font-weight:400;">— Associate System Engineer</span></div>
+        <div class="route-status up"><span class="d"></span> UP</div>
+      </div>
+      <div class="route-meta" style="padding:0 20px 14px;">9 Feb 2026 → present</div>
+      <div class="route-body">
+        <ul>
+          <li>Install, configure and troubleshoot Windows OS, drivers and application software for end users.</li>
+          <li>Diagnose hardware issues across CPU, RAM, storage, motherboards, printers and network cabling.</li>
+          <li>Manage user accounts, password resets and basic access control.</li>
+          <li>Support LAN/Wi-Fi connectivity, IP configuration and day-to-day network troubleshooting.</li>
+          <li>Help employees resolve email, system and software performance issues.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="route reveal">
+      <div class="route-head">
+        <div class="route-host">Emcure Pharmaceutical <span style="color:var(--text-mute); font-weight:400;">— Back-up Engineer</span></div>
+        <div class="route-status arch"><span class="d"></span> ARCHIVED</div>
+      </div>
+      <div class="route-meta" style="padding:0 20px 14px;">10 Dec 2025 → 20 Jan 2026</div>
+      <div class="route-body">
+        <ul>
+          <li>Provided back-up engineering support across system operations and technical issue resolution.</li>
+          <li>Supported day-to-day IT and infrastructure needs during the engagement period.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="route reveal">
+      <div class="route-head">
+        <div class="route-host">ASA Traders <span style="color:var(--text-mute); font-weight:400;">— Desktop Support Engineer</span></div>
+        <div class="route-status arch"><span class="d"></span> ARCHIVED</div>
+      </div>
+      <div class="route-meta" style="padding:0 20px 14px;">3 Mar 2025 → 29 Nov 2025</div>
+      <div class="route-body">
+        <ul>
+          <li>Installed, configured and troubleshot Windows OS, drivers and application software.</li>
+          <li>Resolved hardware issues across CPU, RAM, storage, motherboards, printers and cabling.</li>
+          <li>Managed user accounts, password resets and basic access control.</li>
+          <li>Supported LAN/Wi-Fi connectivity, IP configuration and network troubleshooting.</li>
+          <li>Kept systems healthy through regular updates, antivirus checks and backups.</li>
+          <li>Documented issues and fixes to speed up future troubleshooting.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head"><span class="sec-tag">02 — SHOW VERSION</span><h2 class="sec-title">Skills</h2><div class="sec-rule"></div></div>
+    <div class="skill-grid">
+      <div class="skill-card reveal">
+        <h3>Networking</h3>
+        <ul>
+          <li>CCNA — routing &amp; switching basics</li>
+          <li>IP configuration &amp; subnetting</li>
+          <li>VLANs</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Operating systems</h3>
+        <ul>
+          <li>RHEL — shell &amp; user management</li>
+          <li>File permissions</li>
+          <li>Windows OS install &amp; support</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Cloud platforms</h3>
+        <ul>
+          <li>AWS — EC2, S3, IAM, VPC basics</li>
+          <li>Azure — VMs, resource groups, storage</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Tools</h3>
+        <ul>
+          <li>Terminal, Bash scripting</li>
+          <li>Git &amp; GitHub</li>
+          <li>VS Code, Remote Desktop, PuTTY</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sec-head"><span class="sec-tag">03 — LAB LOGS</span><h2 class="sec-title">Projects &amp; Lab Work</h2><div class="sec-rule"></div></div>
+    <div class="proj-grid">
+      <div class="proj-card reveal">
+        <div class="proj-num">lab/01</div>
+        <h3>AWS EC2 Deployment</h3>
+        <p>Launched and configured an EC2 instance, installed Apache, hosted a basic HTML page, and managed security groups through the AWS console.</p>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-num">lab/02</div>
+        <h3>RHEL User Management</h3>
+        <p>Practiced Linux user and group administration, permission settings and basic shell scripting on Red Hat Enterprise Linux.</p>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-num">lab/03</div>
+        <h3>Cisco Packet Tracer Network</h3>
+        <p>Simulated a small office network with routers and switches, covering IP addressing and VLAN setup.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="sec-head"><span class="sec-tag">04 — TIMELINE</span><h2 class="sec-title">Education &amp; Training</h2><div class="sec-rule"></div></div>
+    <div class="edu-list">
+      <div class="edu-item reveal">
+        <h3>Master in Cloud Computing with AI</h3>
+        <div class="meta">Jetking Jammu Learning Centre · Mar 2025 – Oct 2025</div>
+        <p>Modules in CCNA networking, RHEL, AWS Cloud and Microsoft Azure, with hands-on labs setting up cloud servers, managing VMs and configuring basic networks.</p>
+      </div>
+      <div class="edu-item reveal">
+        <h3>Diploma in Hotel Management</h3>
+        <div class="meta">Sumedha Institute of Management, Visakhapatnam · Apr 2019 – Mar 2021</div>
+      </div>
+      <div class="edu-item reveal">
+        <h3>Bachelor of Commerce</h3>
+        <div class="meta">Govt. Shri Pratap Memorial Rajput College of Commerce, Jammu · Aug 2015 – Jul 2019</div>
+      </div>
+      <div class="edu-item reveal">
+        <h3>Higher Secondary Certificate</h3>
+        <div class="meta">Kendriya Vidyalaya No.1 Gandhi Nagar, Jammu · 2014 – 2015</div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;">
+      <div class="sec-tag" style="margin-bottom:14px; display:block;">CERTIFICATIONS — JETKING</div>
+      <div class="cert-row reveal">
+        <div class="cert-chip"><b>CCNA</b> — Cisco Certified Network Associate</div>
+        <div class="cert-chip"><b>RHEL</b> — Red Hat Enterprise Linux</div>
+        <div class="cert-chip"><b>AWS</b> — Cloud Practitioner / Foundation</div>
+        <div class="cert-chip"><b>Azure</b> — Server Fundamentals</div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="sec-head"><span class="sec-tag">05 — CONNECT</span><h2 class="sec-title">Contact</h2><div class="sec-rule"></div></div>
+    <div class="cta reveal">
+      <div><span class="p1">$</span> ping akash --purpose "hiring"</div>
+      <div style="margin-top:10px; color:var(--text-dim);">
+        Reach out at <a href="mailto:akashmanhas3785@gmail.com">akashmanhas3785@gmail.com</a> or
+        <a href="tel:+919797150027">+91 97971 50027</a>. Code and lab notes live on
+        <a href="https://github.com/RedCoffin" target="_blank" rel="noopener">GitHub — RedCoffin</a>.
+      </div>
+    </div>
+    <div class="foot-meta">
+      <span>Akash Singh Manhas — Jammu, India</span>
+      <span>Built with HTML / CSS / JS</span>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  // Typed "whoami" output in hero terminal
+  const out = "IT support engineer, Jammu, India. Cloud &amp; networking trainee at Jetking (AWS · Azure · RHEL · CCNA). Currently: Associate System Engineer @ Bajaj General Insurance.";
+  const el = document.getElementById('typed');
+  const cursor = document.getElementById('cursor');
+  const plain = out.replace(/&amp;/g,'&');
+  let i = 0;
+  function type(){
+    if(i <= plain.length){
+      el.textContent = plain.slice(0, i);
+      i++;
+      setTimeout(type, 14);
+    }
+  }
+  type();
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
