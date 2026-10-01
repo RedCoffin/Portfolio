@@ -1,7 +1,7 @@
 # Portfolio
 https://redcoffin.github.io/Portfolio/
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b1220,100:e8923a&height=200&section=header&text=Akash%20Singh%20Manhas&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=IT%20Support%20Engineer%20%7C%20Endpoint%20%26%20Systems%20%7C%20Cloud%20Learner&descAlignY=60&descSize=16" width="100%" alt="banner"/>
+<img src="banner.svg" width="100%" alt="banner"/>
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1000&color=E8923A&center=true&vCenter=true&width=600&lines=Active+Directory+%C2%B7+SCCM+%C2%B7+ServiceNow;Learning+AWS+%C2%B7+Azure+%C2%B7+RHEL+Linux;Open+to+cloud+support+and+junior+sysadmin+roles" alt="typing"/>
