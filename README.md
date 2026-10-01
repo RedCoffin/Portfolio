@@ -8,7 +8,7 @@ https://redcoffin.github.io/Portfolio/
 </p>
 
 <p align="center">
-  <a href="https://your-site-link"><img src="https://img.shields.io/badge/Portfolio-e8923a?style=for-the-badge&logo=googlechrome&logoColor=white"/></a>
+  <a href=""Akash_Resume.pdf" download="Akash_Singh_Manhas_Resume.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M6 12l6 6 6-6"/><path d="M5 21h14"/></svg>resume.pdf"><img src="https://img.shields.io/badge/Portfolio-e8923a?style=for-the-badge&logo=googlechrome&logoColor=white"/></a>
   <a href="mailto:akashmanhas3785@gmail.com"><img src="https://img.shields.io/badge/Email-c7402f?style=for-the-badge&logo=gmail&logoColor=white"/></a>
   <img src="https://img.shields.io/badge/Jammu%2C%20India-0b1220?style=for-the-badge&logo=googlemaps&logoColor=white"/>
 </p>
