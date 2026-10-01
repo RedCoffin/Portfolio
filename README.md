@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="www.linkedin.com/in/akash-singh-manhas-0087a81a9">
+  <a href="https://www.linkedin.com/in/akash-singh-manhas-0087a81a9">
     <img src="https://img.shields.io/badge/Portfolio-e8923a?style=for-the-badge&logo=googlechrome&logoColor=white"/>
   </a>
 
