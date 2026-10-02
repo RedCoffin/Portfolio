@@ -1,1 +1,222 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akash Singh Manhas — IT Support &amp; Cloud</title>
+<meta name="description" content="Portfolio of Akash Singh Manhas — IT support engineer with 1.5+ years in endpoint management, Active Directory and ServiceNow, lab-trained in Windows Server, RHEL Linux, AWS, Azure and CCNA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg-deep:#0b1220;--bg-panel:#111b2e;--bg-panel-alt:#16223a;--line:#22304a;--line-soft:#1a2740;--text:#e4eaf5;--text-dim:#93a2c2;--text-mute:#5f7095;--rhel:#c7402f;--aws:#e8923a;--up:#4fd694;--mono:'JetBrains Mono',monospace;--sans:'Inter',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg-deep);color:var(--text);font-family:var(--sans);line-height:1.6;background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);background-size:48px 48px;background-position:-1px -1px}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+a{color:inherit}
+::selection{background:var(--rhel);color:#fff}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:980px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:var(--mono);font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px}
+.brand .dot{width:8px;height:8px;border-radius:50%;background:var(--up);box-shadow:0 0 8px var(--up);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+nav.links{display:flex;gap:2px;font-family:var(--mono);font-size:12px}
+nav.links a{padding:8px 12px;color:var(--text-dim);text-decoration:none;position:relative}
+nav.links a::before{content:'/';color:var(--text-mute);margin-right:2px}
+nav.links a::after{content:'';position:absolute;left:12px;right:12px;bottom:4px;height:1px;background:var(--aws);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav.links a:hover{color:var(--text)}nav.links a:hover::after{transform:scaleX(1)}
+@media (max-width:640px){nav.links{display:none}}
+.resume-btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;color:var(--bg-deep);background:var(--aws);text-decoration:none;padding:8px 13px;border-radius:6px;font-weight:600;transition:filter .2s,transform .2s;white-space:nowrap}
+.resume-btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.hero{padding:96px 0 64px}
+.term{background:var(--bg-panel);border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 20px 60px -20px rgba(0,0,0,.6)}
+.term-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--bg-panel-alt);border-bottom:1px solid var(--line)}
+.term-bar span{width:10px;height:10px;border-radius:50%;background:#33415f}
+.term-bar .path{margin-left:10px;width:auto;height:auto;border-radius:0;background:none;font-family:var(--mono);font-size:11px;color:var(--text-mute)}
+.term-body{padding:28px 26px 30px;font-family:var(--mono);font-size:14px}
+.term-body .line{color:var(--text-dim);margin-bottom:6px}.term-body .prompt{color:var(--up)}.term-body .cmd,#typed{color:var(--text)}
+.cursor{display:inline-block;width:8px;height:16px;background:var(--aws);vertical-align:middle;margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-out{margin-top:18px;opacity:0;animation:fadeUp .6s ease forwards;animation-delay:1.8s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.hero-grid{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start;padding-top:8px}
+.avatar-frame{width:110px;height:110px;border-radius:10px;overflow:hidden;border:1px solid var(--line);box-shadow:0 0 0 4px var(--bg-deep),0 0 0 5px var(--line)}
+.avatar-frame img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%) contrast(1.05)}
+h1{font-family:var(--mono);font-weight:800;font-size:clamp(28px,4vw,40px);letter-spacing:-.01em;line-height:1.15;margin-bottom:6px}
+.role{font-family:var(--mono);color:var(--aws);font-size:14px;font-weight:600;margin-bottom:14px}
+.lede{color:var(--text-dim);max-width:60ch;font-size:15.5px}
+.status-badge{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--mono);font-size:11.5px;color:var(--up);border:1px solid #1e4536;background:rgba(79,214,148,.08);padding:6px 12px;border-radius:100px}
+.status-badge .d{width:6px;height:6px;border-radius:50%;background:var(--up);animation:pulse 2s infinite}
+.contact-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px;font-family:var(--mono);font-size:12.5px}
+.contact-row a{color:var(--text-dim);text-decoration:none;border:1px solid var(--line);padding:7px 11px;border-radius:6px;transition:border-color .2s,color .2s}
+.contact-row a:hover{color:var(--text);border-color:var(--aws)}
+@media (max-width:520px){.hero-grid{grid-template-columns:1fr}}
+section{padding:64px 0}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:32px}
+.sec-tag{font-family:var(--mono);font-size:11px;color:var(--text-mute);letter-spacing:.08em}
+.sec-title{font-family:var(--mono);font-weight:700;font-size:22px}
+.sec-rule{flex:1;height:1px;background:var(--line)}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+.route{border:1px solid var(--line);background:var(--bg-panel);border-radius:8px;margin-bottom:16px;overflow:hidden}
+.route-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding:16px 20px;background:var(--bg-panel-alt);border-bottom:1px solid var(--line)}
+.route-host{font-family:var(--mono);font-weight:700;font-size:15px}
+.route-meta{font-family:var(--mono);font-size:11.5px;color:var(--text-mute);display:flex;gap:14px;flex-wrap:wrap}
+.route-status{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:var(--text-mute)}
+.route-status .d{width:6px;height:6px;border-radius:50%;background:currentColor}
+.route-body{padding:18px 20px}.route-body ul{list-style:none}
+.route-body li{position:relative;padding-left:20px;margin-bottom:9px;color:var(--text-dim);font-size:14.5px}
+.route-body li:last-child{margin-bottom:0}
+.route-body li::before{content:'→';position:absolute;left:0;color:var(--aws);font-family:var(--mono)}
+.route-body b{color:var(--text);font-weight:600}
+
+/* ===== Skill cards with hover animation ===== */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.skill-card{
+  border:1px solid var(--line);
+  background:var(--bg-panel);
+  border-radius:8px;
+  padding:18px 20px;
+  transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.skill-card.lab{border-color:var(--rhel)}
+.skill-card h3{
+  font-family:var(--mono);font-size:12px;color:var(--aws);
+  letter-spacing:.06em;margin-bottom:12px;text-transform:uppercase;
+  transition:letter-spacing .25s ease;
+}
+.skill-card li{
+  list-style:none;font-family:var(--mono);font-size:13px;color:var(--text-dim);
+  padding:6px 0;border-top:1px dashed var(--line-soft);
+  transition:color .2s ease, padding-left .2s ease;
+}
+.skill-card li:first-child{border-top:none}
+@media (hover:hover){
+  .skill-card:hover{
+    transform:translateY(-6px);
+    border-color:var(--aws);
+    background:var(--bg-panel-alt);
+    box-shadow:0 14px 34px -14px rgba(232,146,58,.45);
+  }
+  .skill-card.lab:hover{
+    border-color:var(--rhel);
+    box-shadow:0 14px 34px -14px rgba(199,64,47,.55);
+  }
+  .skill-card:hover h3{letter-spacing:.12em}
+  .skill-card li:hover{color:var(--text);padding-left:8px}
+}
+
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.proj-card{border:1px solid var(--line);background:var(--bg-panel);border-radius:8px;padding:20px;transition:border-color .2s,transform .2s}
+.proj-card:hover{border-color:var(--rhel);transform:translateY(-3px)}
+.proj-num{font-family:var(--mono);font-size:11px;color:var(--text-mute);margin-bottom:10px}
+.proj-card h3{font-family:var(--mono);font-size:15px;margin-bottom:10px}
+.proj-card p{font-size:13.5px;color:var(--text-dim)}
+.edu-list{border-left:1px solid var(--line);margin-left:6px}
+.edu-item{position:relative;padding:0 0 26px 26px}.edu-item:last-child{padding-bottom:0}
+.edu-item::before{content:'';position:absolute;left:-5.5px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--bg-deep);border:2px solid var(--aws)}
+.edu-item h3{font-family:var(--mono);font-size:14.5px;margin-bottom:4px}
+.edu-item .meta{font-family:var(--mono);font-size:11.5px;color:var(--text-mute);margin-bottom:6px}
+.edu-item p{font-size:13.5px;color:var(--text-dim)}
+.cert-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.cert-chip{font-family:var(--mono);font-size:12px;color:var(--text-dim);border:1px solid var(--line);padding:8px 14px;border-radius:6px;background:var(--bg-panel)}
+.cert-chip b{color:var(--text)}
+.note{font-family:var(--mono);font-size:11.5px;color:var(--text-mute)}
+footer{border-top:1px solid var(--line);padding:56px 0 40px}
+.cta{font-family:var(--mono);font-size:13px;color:var(--text-dim);background:var(--bg-panel);border:1px solid var(--line);border-radius:8px;padding:22px 24px;line-height:2}
+.cta .p1{color:var(--up)}.cta a{color:var(--aws);text-decoration:none;border-bottom:1px dashed var(--aws)}
+.foot-meta{margin-top:22px;font-family:var(--mono);font-size:11px;color:var(--text-mute);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+<header class="nav"><div class="nav-inner">
+<div class="brand"><span class="dot"></span> akash@systems:~$</div>
+<nav class="links"><a href="#experience">experience</a><a href="#skills">skills</a><a href="#projects">labs</a><a href="#education">education</a><a href="#contact">contact</a></nav>
+<a class="resume-btn resume-link" href="Akash_Resume.pdf" download="Akash_Singh_Manhas_Resume.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M6 12l6 6 6-6"/><path d="M5 21h14"/></svg>resume.pdf</a>
+</div></header>
+<main class="wrap">
+<section class="hero">
+<div class="term"><div class="term-bar"><span></span><span></span><span></span><span class="path">akash@systems — whoami</span></div>
+<div class="term-body"><div class="line"><span class="prompt">$</span> <span class="cmd">whoami</span></div><div id="typed"></div><span class="cursor"></span></div></div>
+<div class="hero-out"><div class="hero-grid">
+<div class="avatar-frame"><img alt="Akash Singh Manhas" src="akash1.jpg"></div>
+<div>
+<h1>Akash Singh Manhas</h1>
+<div class="role">IT Support Engineer · Endpoint &amp; Systems · Cloud Learner</div>
+<p class="lede">1.5+ years in desktop and endpoint support with Active Directory, SCCM/MECM, ServiceNow and endpoint security (Zscaler, DLP, MDM). Lab-trained at Jetking in Windows Server 2019/2022, RHEL Linux, AWS, Azure and CCNA networking.</p>
+<div class="status-badge"><span class="d"></span>open to: cloud support · junior sysadmin · devops</div>
+<div class="contact-row"><a href="mailto:akashmanhas3785@gmail.com">akashmanhas3785@gmail.com</a><a href="https://github.com/RedCoffin" target="_blank" rel="noopener">github/RedCoffin</a><a href="tel:+919797150027">+91-9797150027</a></div>
+</div></div></div>
+</section>
+
+<section id="experience"><div class="sec-head reveal"><span class="sec-tag">01</span><h2 class="sec-title">experience</h2><span class="sec-rule"></span></div>
+<div class="route reveal"><div class="route-head"><div><div class="route-host">Associate System Engineer — Bajaj General Insurance</div><div class="route-meta"><span>9 Feb 2026 – 31 Aug 2026</span></div></div><span class="route-status"><span class="d"></span>completed</span></div>
+<div class="route-body"><ul>
+<li>L1 desktop and system support: installation, configuration and troubleshooting of Windows OS, drivers, applications and hardware.</li>
+<li>Software deployment and <b>patch management</b> with <b>SCCM/MECM</b> and <b>ManageEngine Endpoint Central</b>; tickets handled in the <b>TechMitra Infra</b> portal.</li>
+<li>Administered <b>Active Directory</b> (users, groups, OUs), password resets and account unlocks, including the self-service portal.</li>
+<li>Endpoint security and compliance with <b>Zscaler</b>, <b>MDM</b> and <b>DLP</b>.</li>
+<li>File servers, <b>VPN</b>, wireless APs and routers, <b>system monitoring</b> (incl. RAID storage), and TCP/IP, DNS, DHCP, LAN/Wi-Fi troubleshooting.</li>
+<li>Outlook support (setup, PST/OST), system errors and performance issues.</li>
+</ul></div></div>
+<div class="route reveal"><div class="route-head"><div><div class="route-host">Back-up Engineer — Emcure Pharmaceutical</div><div class="route-meta"><span>10 Dec 2025 – 20 Jan 2026</span></div></div><span class="route-status"><span class="d"></span>completed</span></div>
+<div class="route-body"><ul>
+<li>Back-up engineering support for system operations; incidents managed in <b>ServiceNow</b>.</li>
+<li><b>TightVNC</b> for remote support, <b>Trend Micro Apex</b> for endpoint antivirus, <b>Zscaler</b> for secure web access.</li>
+</ul></div></div>
+<div class="route reveal"><div class="route-head"><div><div class="route-host">Desktop Support Engineer — ASA Traders</div><div class="route-meta"><span>3 Mar 2025 – 29 Nov 2025</span></div></div><span class="route-status"><span class="d"></span>completed</span></div>
+<div class="route-body"><ul>
+<li>Installed, configured and troubleshot Windows OS, drivers, applications and hardware.</li>
+<li>User accounts, password resets and access control; LAN/Wi-Fi, IP configuration and email support.</li>
+<li>System health through updates, antivirus checks and backups; documented fixes for faster troubleshooting.</li>
+</ul></div></div>
+</section>
+
+<section id="skills"><div class="sec-head reveal"><span class="sec-tag">02</span><h2 class="sec-title">skills</h2><span class="sec-rule"></span></div>
+<div class="skill-grid reveal">
+<div class="skill-card lab"><h3>Lab &amp; Training (Jetking)</h3><ul><li>Windows Server 2019 / 2022</li><li>RHEL Linux</li><li>AWS: EC2, S3, IAM, VPC</li><li>Azure: VMs, Resource Groups, Storage</li><li>CCNA: VLANs, Subnetting, Routing &amp; Switching</li></ul></div>
+<div class="skill-card"><h3>Endpoint &amp; Security</h3><ul><li>Active Directory</li><li>SCCM/MECM · Endpoint Central</li><li>MDM · DLP · Zscaler</li><li>Trend Micro Apex</li><li>Patch Management · Monitoring</li></ul></div>
+<div class="skill-card"><h3>ITSM &amp; Support</h3><ul><li>ServiceNow · TechMitra Infra</li><li>Incident Management · L1 Support</li><li>Troubleshooting · Documentation</li><li>RDP · TightVNC · PuTTY</li></ul></div>
+<div class="skill-card"><h3>Networking</h3><ul><li>TCP/IP · DNS · DHCP</li><li>LAN/WAN · Wi-Fi</li><li>VPN · Wireless AP · Routers</li></ul></div>
+<div class="skill-card"><h3>Scripting &amp; Tools</h3><ul><li>Bash · Python (basic)</li><li>Git · GitHub · VS Code</li><li>RAID · File Server · Backup</li></ul></div>
+</div></section>
+
+<section id="projects"><div class="sec-head reveal"><span class="sec-tag">03</span><h2 class="sec-title">labs</h2><span class="sec-rule"></span></div>
+<div class="proj-grid reveal">
+<div class="proj-card"><div class="proj-num">LAB_01</div><h3>AWS EC2 Deployment</h3><p>Configured an EC2 instance, installed Apache, hosted an HTML page and managed security groups in the AWS Console.</p></div>
+<div class="proj-card"><div class="proj-num">LAB_02</div><h3>RHEL User Management</h3><p>Linux users, groups, file permissions and basic Bash scripting.</p></div>
+<div class="proj-card"><div class="proj-num">LAB_03</div><h3>Cisco Packet Tracer</h3><p>Simulated a small office network with routers, switches, IP addressing and VLANs.</p></div>
+</div></section>
+
+<section id="education"><div class="sec-head reveal"><span class="sec-tag">04</span><h2 class="sec-title">education</h2><span class="sec-rule"></span></div>
+<div class="edu-list reveal">
+<div class="edu-item"><h3>Master in Cloud Computing with AI</h3><div class="meta">Jetking Jammu Learning Centre · Mar 2025 – Oct 2025</div><p>CCNA, Red Hat Enterprise Linux, AWS Cloud, Microsoft Azure, with hands-on labs in cloud servers, VMs and network configuration.</p></div>
+<div class="edu-item"><h3>Diploma in Hotel Management</h3><div class="meta">Sumedha Institute of Management, Visakhapatnam · Apr 2019 – Mar 2021</div></div>
+<div class="edu-item"><h3>Bachelor of Commerce · 55%</h3><div class="meta">Govt. Shri Pratap Memorial Rajput College of Commerce, Jammu · Aug 2015 – Jul 2019</div></div>
+<div class="edu-item"><h3>HSC (CGPA 6.7) · SSC (CGPA 6.2)</h3><div class="meta">Kendriya Vidyalaya No.1 Gandhi Nagar, Jammu · 2015 · 2013</div></div>
+</div>
+<div class="reveal" style="margin-top:32px"><div class="cert-row">
+<span class="cert-chip"><b>CCNA</b> · Jetking</span><span class="cert-chip"><b>RHEL</b> · Jetking</span><span class="cert-chip"><b>AWS Cloud Practitioner / Foundation</b> · Jetking</span><span class="cert-chip"><b>Azure Server Fundamentals</b> · Jetking</span><span class="cert-chip"><b>Programming Using Python</b> · Alison · 91%</span>
+</div><p class="note">// Jetking training modules; not official vendor exam certificates.</p></div>
+</section>
+</main>
+
+<footer id="contact"><div class="wrap">
+<div class="cta"><span class="p1">$</span> echo "let's connect"<br>→ <a href="mailto:akashmanhas3785@gmail.com">akashmanhas3785@gmail.com</a><br>→ <a href="https://github.com/RedCoffin" target="_blank" rel="noopener">github.com/RedCoffin</a><br>→ <a href="tel:+919797150027">+91-9797150027</a></div>
+<div class="foot-meta"><span>© 2026 Akash Singh Manhas</span><span>Jammu, India</span></div>
+</div></footer>
+
+<script>
+(function(){
+var t=document.getElementById('typed'),txt='IT support engineer · endpoint & systems · growing into cloud.',i=0;
+var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(rm){t.textContent=txt}else{(function k(){if(i<=txt.length){t.textContent=txt.slice(0,i++);setTimeout(k,32)}})()}
+var els=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){var o=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');o.unobserve(x.target)}})},{threshold:.1});els.forEach(function(el){o.observe(el)})}else{els.forEach(function(el){el.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
